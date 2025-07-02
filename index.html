@@ -3,22 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>我的 GitHub 網站</title>
+  <title>Gratia's Resume</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      color: #333;
-      text-align: center;
-      padding: 50px;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    h1 {
-      color: #007acc;
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 1rem;
+      z-index: 999;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0077ff;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1589927986089-35812388d1aa?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 0 10px #000;
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <h1>歡迎來到我的網站！</h1>
-  <p>這是我使用 GitHub Pages 部署的第一個網站 🎉</p>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#career">Career</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Yu-Hsuan, Gratia Li</h1>
+    <p>Bringing ideas to life.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>我是 Gratia，一位對創意與科技充滿熱情的設計師／開發者。熱愛整合設計思維與實作能力，打造有影響力的數位體驗。</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>國立某某大學</strong><br/>資訊管理學系，2018 – 2022</p>
+  </section>
+
+  <section id="career">
+    <h2>Career</h2>
+    <ul>
+      <li><strong>XYZ Design Studio – UX Intern</strong><br/>協助進行使用者訪談與網站設計</li>
+      <li><strong>ABC Tech – 前端工程實習生</strong><br/>參與企業官網與產品前端開發</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML / CSS / JavaScript / React</li>
+      <li>Figma / Adobe XD / UI設計</li>
+      <li>Git / GitHub / Responsive Web Design</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: gratia@example.com</p>
+    <p>GitHub: <a href="https://github.com/Gratia2533" target="_blank">Gratia2533</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">Your LinkedIn</a></p>
+  </section>
+
 </body>
 </html>
