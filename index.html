@@ -24,14 +24,14 @@
   </nav>
 
   <header>
-    <h1 id="typing">Welcome!</h1>
-    <p>Hi, I'm Gratia – Bringing AI to Real-World.</p>
+    <h1 class="fade-in">Yu-Hsuan, Gratia Li</h1>
+    <p class="typing-text" id="typing"></p>
   </header>
 
   <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>我是 Gratia</p>
-    <!--img src="src/avatar.png" alt="Gratia Portrait" class="avatar"-->
+    <!-- <img src="src/avatar.png" alt="Gratia Portrait" class="avatar"> -->
   </section>
 
   <section id="education" data-aos="fade-left">
@@ -39,31 +39,31 @@
     <a href="https://math.nsysu.edu.tw/" target="_blank" class="edu-link">
       <img src="src/NSYSU.png" alt="School Logo" class="school-logo" />
       <div>
-        <strong>國立中山大學</strong><br />
+        <strong>國立中山大學</strong> <span class="tag">碩士</span><br />
         應用數學系研究所，2023 – 2025
       </div>
     </a>
     <a href="https://math.ncue.edu.tw/" target="_blank" class="edu-link">
-        <img src="src/NCUE.png" alt="School Logo" class="school-logo" />
-        <div>
-          <strong>國立彰化師範大學</strong><br />
-          數學系(資訊組)，2020 – 2022
-        </div>
-      </a>
-      <a href="https://iceweb.cycu.edu.tw/" target="_blank" class="edu-link">
-        <img src="src/CYCU.png" alt="School Logo" class="school-logo" />
-        <div>
-          <strong>中原大學</strong><br />
-          資訊工程學系研究所，2022 – 2023
-        </div>
-      </a>
-      <a href="https://www.math.fju.edu.tw/" target="_blank" class="edu-link">
-        <img src="src/FJU.png" alt="School Logo" class="school-logo" />
-        <div>
-          <strong>輔仁大學</strong><br />
-          應用數學系(資訊數學組)，2018 – 2020
-        </div>
-      </a>
+      <img src="src/NCUE.png" alt="School Logo" class="school-logo" />
+      <div>
+        <strong>國立彰化師範大學</strong> <span class="tag">學士</span><br />
+        數學系(資訊組)，2020 – 2022
+      </div>
+    </a>
+    <a href="https://iceweb.cycu.edu.tw/" target="_blank" class="edu-link">
+      <img src="src/CYCU.png" alt="School Logo" class="school-logo" />
+      <div>
+        <strong>中原大學</strong> <span class="tag">肄業</span><br />
+        資訊工程學系研究所，2022 – 2023
+      </div>
+    </a>
+    <a href="https://www.math.fju.edu.tw/" target="_blank" class="edu-link">
+      <img src="src/FJU.png" alt="School Logo" class="school-logo" />
+      <div>
+        <strong>輔仁大學</strong> <span class="tag">肄業</span><br />
+        應用數學系(資訊數學組)，2018 – 2020
+      </div>
+    </a>
   </section>
 
   <section id="career" data-aos="fade-right">
@@ -72,13 +72,12 @@
       <h3>壹一壹一科技股份有限公司(1111人力銀行)</h3>
       <p><strong>資料科學工程師(RDSS)</strong> | 2025/06 – 至今</p>
     </div>
-  
+
     <div class="career-item">
       <h3>林口長庚醫院早期療育中心</h3>
       <p><strong>研究助理</strong> | 2022/07 – 2022/08</p>
     </div>
   </section>
-  
 
   <section id="skills" data-aos="zoom-in">
     <h2>Skills</h2>
@@ -100,17 +99,14 @@
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 
-  <!-- Typing effect -->
+  <!-- Typing effect JS -->
   <script>
-    const text = "Yu-Hsuan, Gratia Li";
+    const text = "Hi, I'm Gratia – Bringing AI to Real-World.";
     let i = 0;
-    const speed = 100;
+    const speed = 60;
     const typingEl = document.getElementById("typing");
-
     function typeWriter() {
       if (i < text.length) {
         typingEl.innerHTML += text.charAt(i);
@@ -118,7 +114,6 @@
         setTimeout(typeWriter, speed);
       }
     }
-
     typingEl.innerHTML = "";
     typeWriter();
   </script>
