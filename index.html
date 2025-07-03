@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gratia's Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gratia's Space</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -11,143 +11,10 @@
   <!-- AOS (Animate on Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <style>
-    :root {
-      --primary: #007aff;
-      --text: #333;
-      --bg: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      padding: 1rem 2rem;
-      z-index: 1000;
-      font-weight: 600;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1589927986089-35812388d1aa?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
-      padding: 0 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    #typing {
-      color: #fff;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 100px 20px 60px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    section h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      margin-top: 8px;
-    }
-
-    .btn {
-      background-color: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    a {
-      color: var(--primary);
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        font-size: 0.9rem;
-        gap: 0.75rem;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      section {
-        padding: 80px 15px 50px;
-      }
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -158,33 +25,69 @@
 
   <header>
     <h1 id="typing">Welcome!</h1>
-    <p>Hi, I'm Gratia – bringing ideas to life.</p>
+    <p>Hi, I'm Gratia – Bringing AI to Real-World.</p>
   </header>
 
   <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>我是 Gratia，一位對創意與科技充滿熱情的AI應用工程師。喜歡結合設計思維與實作能力，打造具有影響力的數位體驗。</p>
+    <p>我是 Gratia</p>
+    <!--img src="src/avatar.png" alt="Gratia Portrait" class="avatar"-->
   </section>
 
   <section id="education" data-aos="fade-left">
     <h2>Education</h2>
-    <p><strong>國立某某大學</strong><br/>資訊管理學系，2018 – 2022</p>
+    <a href="https://math.nsysu.edu.tw/" target="_blank" class="edu-link">
+      <img src="src/NSYSU.png" alt="School Logo" class="school-logo" />
+      <div>
+        <strong>國立中山大學</strong><br />
+        應用數學系研究所，2023 – 2025
+      </div>
+    </a>
+    <a href="https://math.ncue.edu.tw/" target="_blank" class="edu-link">
+        <img src="src/NCUE.png" alt="School Logo" class="school-logo" />
+        <div>
+          <strong>國立彰化師範大學</strong><br />
+          數學系(資訊組)，2020 – 2022
+        </div>
+      </a>
+      <a href="https://iceweb.cycu.edu.tw/" target="_blank" class="edu-link">
+        <img src="src/CYCU.png" alt="School Logo" class="school-logo" />
+        <div>
+          <strong>中原大學</strong><br />
+          資訊工程學系研究所，2022 – 2023
+        </div>
+      </a>
+      <a href="https://www.math.fju.edu.tw/" target="_blank" class="edu-link">
+        <img src="src/FJU.png" alt="School Logo" class="school-logo" />
+        <div>
+          <strong>輔仁大學</strong><br />
+          應用數學系(資訊數學組)，2018 – 2020
+        </div>
+      </a>
   </section>
 
   <section id="career" data-aos="fade-right">
     <h2>Career</h2>
-    <ul>
-      <li><strong>XYZ Design Studio – UX Intern</strong><br/>協助進行使用者訪談與網站設計</li>
-      <li><strong>ABC Tech – 前端工程實習生</strong><br/>參與企業官網與產品前端開發</li>
-    </ul>
+    <div class="career-item">
+      <h3>壹一壹一科技股份有限公司(1111人力銀行)</h3>
+      <p><strong>資料科學工程師(RDSS)</strong> | 2025/06 – 至今</p>
+    </div>
+  
+    <div class="career-item">
+      <h3>林口長庚醫院早期療育中心</h3>
+      <p><strong>研究助理</strong> | 2022/07 – 2022/08</p>
+    </div>
   </section>
+  
 
   <section id="skills" data-aos="zoom-in">
     <h2>Skills</h2>
     <ul>
-      <li>HTML / CSS / JavaScript / React</li>
-      <li>Figma / Adobe XD / UI設計</li>
-      <li>Git / GitHub / 響應式設計</li>
+      <li>Language: TOEIC 780</li>
+      <li>Programming: Python / R / SQL / TensorFlow / Git / GitHub</li>
+      <li>Tools: Power BI / Word / Power Point / Excel</li>
+      <li>Features: Computer Vision / Deep Learning / Natural Language Processing / Data Analysis</li>
+      <li>Cloud: AWS / GCP / Akamai</li>
     </ul>
   </section>
 
