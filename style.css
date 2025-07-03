@@ -58,7 +58,7 @@ header h1 {
 }
 
 .glow-text {
-  text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffffaa;
+  text-shadow: 0 0 16px #ffffff, 0 0 32px #ffffffaa;
   color: #7e644f;
 }
 
