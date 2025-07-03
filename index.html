@@ -4,38 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gratia's Resume</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
+    :root {
+      --primary: #007aff;
+      --text: #333;
+      --bg: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #fff;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
     }
+
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(6px);
-      padding: 1rem;
-      z-index: 999;
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      font-weight: 600;
     }
+
     nav a {
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      color: var(--text);
+      font-size: 1rem;
       transition: color 0.3s;
     }
+
     nav a:hover {
-      color: #0077ff;
+      color: var(--primary);
     }
+
     header {
       background: url('https://images.unsplash.com/photo-1589927986089-35812388d1aa?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       height: 100vh;
@@ -44,27 +64,92 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-shadow: 0 0 10px #000;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+      padding: 0 20px;
     }
+
     header h1 {
       font-size: 3rem;
+      margin-bottom: 1rem;
     }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    #typing {
+      color: #fff;
+      font-weight: bold;
+    }
+
     section {
-      padding: 80px 20px;
+      padding: 100px 20px 60px;
       max-width: 900px;
       margin: auto;
     }
+
     section h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      margin-top: 8px;
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        font-size: 0.9rem;
+        gap: 0.75rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 80px 15px 50px;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#about">About Me</a>
+    <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#career">Career</a>
     <a href="#skills">Skills</a>
@@ -72,21 +157,21 @@
   </nav>
 
   <header>
-    <h1>Yu-Hsuan, Gratia Li</h1>
-    <p>Bringing ideas to life.</p>
+    <h1 id="typing">Welcome!</h1>
+    <p>Hi, I'm Gratia – bringing ideas to life.</p>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>我是 Gratia，一位對創意與科技充滿熱情的設計師／開發者。熱愛整合設計思維與實作能力，打造有影響力的數位體驗。</p>
+    <p>我是 Gratia，一位對創意與科技充滿熱情的AI應用工程師。喜歡結合設計思維與實作能力，打造具有影響力的數位體驗。</p>
   </section>
 
-  <section id="education">
+  <section id="education" data-aos="fade-left">
     <h2>Education</h2>
     <p><strong>國立某某大學</strong><br/>資訊管理學系，2018 – 2022</p>
   </section>
 
-  <section id="career">
+  <section id="career" data-aos="fade-right">
     <h2>Career</h2>
     <ul>
       <li><strong>XYZ Design Studio – UX Intern</strong><br/>協助進行使用者訪談與網站設計</li>
@@ -94,21 +179,45 @@
     </ul>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="zoom-in">
     <h2>Skills</h2>
     <ul>
       <li>HTML / CSS / JavaScript / React</li>
       <li>Figma / Adobe XD / UI設計</li>
-      <li>Git / GitHub / Responsive Web Design</li>
+      <li>Git / GitHub / 響應式設計</li>
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Email: gratia@example.com</p>
     <p>GitHub: <a href="https://github.com/Gratia2533" target="_blank">Gratia2533</a></p>
     <p>LinkedIn: <a href="#" target="_blank">Your LinkedIn</a></p>
   </section>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Typing effect -->
+  <script>
+    const text = "Yu-Hsuan, Gratia Li";
+    let i = 0;
+    const speed = 100;
+    const typingEl = document.getElementById("typing");
+
+    function typeWriter() {
+      if (i < text.length) {
+        typingEl.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typingEl.innerHTML = "";
+    typeWriter();
+  </script>
 </body>
 </html>
