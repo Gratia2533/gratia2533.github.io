@@ -7,7 +7,7 @@
   body {
     font-family: 'Inter', sans-serif;
     background-color: #fff1d8;
-    color: #fff;
+    color: #7e644f;
     background-image: url('src/parallax-bg.png');
     background-attachment: fixed;
     background-position: center;
@@ -29,7 +29,7 @@
   }
   
   nav a {
-    color: white;
+    color: #7e644f;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -59,7 +59,7 @@
   header p.typing-text {
     font-size: 1.5rem;
     font-weight: 400;
-    border-right: 2px solid #fff;
+    border-right: 2px solid #7e644f;
     white-space: nowrap;
     overflow: hidden;
     width: fit-content;
@@ -84,7 +84,7 @@
     gap: 1rem;
     margin-bottom: 1.5rem;
     text-decoration: none;
-    color: white;
+    color: #7e644f;
   }
   
   .school-logo {
@@ -92,13 +92,13 @@
     height: 50px;
     object-fit: contain;
     border-radius: 8px;
-    background-color: fff1d8;
+    background-color: #fff1d8;
     padding: 2px;
   }
   
   .tag {
-    background-color: #7e644f;
-    color: #111;
+    background-color: #b78d70;
+    color: #7e644f;
     font-size: 0.75rem;
     padding: 2px 6px;
     border-radius: 4px;
