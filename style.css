@@ -178,3 +178,25 @@ ul {
     height: 40px;
   }
 }
+
+footer.glass-footer {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px 16px 0 0;
+  padding: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  color: #7e644f;
+}
+
+footer.glass-footer a {
+  color: #7e644f;
+  text-decoration: underline;
+}
+
+footer.glass-footer .license-text {
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
