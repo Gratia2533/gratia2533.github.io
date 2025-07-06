@@ -210,3 +210,26 @@ footer.glass-footer .license-text {
   color: #5e4a3c;
   margin-top: 1rem;
 }
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-list i {
+  color: #7e644f;
+  min-width: 20px;
+}
+
+.license-text {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
