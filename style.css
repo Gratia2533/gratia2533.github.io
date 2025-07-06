@@ -188,6 +188,13 @@ footer.glass-footer {
   backdrop-filter: blur(5px);
   text-align: center;
   color: #7e644f;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer.glass-footer .footer-content {
+  margin-bottom: 1rem;
 }
 
 footer.glass-footer a {
@@ -197,6 +204,6 @@ footer.glass-footer a {
 
 footer.glass-footer .license-text {
   font-size: 0.85rem;
-  margin-top: 1.5rem;
-  opacity: 0.8;
+  color: #5e4a3c;
+  margin-top: 1rem;
 }
