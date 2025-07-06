@@ -69,6 +69,40 @@ nav {
   color: #7e644f;
 }
 
+/* 語言選單互動樣式 */
+.language-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #7e644f;
+  cursor: pointer;
+}
+
+.language-switcher i {
+  font-size: 1.2rem;
+  padding: 4px;
+}
+
+.lang-select-hidden {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  z-index: 999;
+  display: none;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #7e644f;
+}
+
+/* 選單打開時顯示 */
+.language-switcher.show select.lang-select-hidden {
+  display: block;
+}
+
+
 /* 首頁標題區塊 */
 header {
   height: 100vh;

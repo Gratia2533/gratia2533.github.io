@@ -25,12 +25,12 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="language-switcher">
-        <i class="fas fa-globe"></i>
-        <select id="langSelect">
+        <i class="fas fa-globe" id="langIcon" tabindex="0"></i>
+        <select id="langSelect" class="lang-select-hidden">
           <option value="en" selected>English</option>
           <option value="zh">中文</option>
         </select>
-      </div>
+      </div>      
     </div>
   </nav>
 
@@ -173,6 +173,20 @@
         el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
       });
     });
+    const langIcon = document.getElementById("langIcon");
+    const langSelect = document.getElementById("langSelect");
+    const langWrapper = document.querySelector(".language-switcher");
+
+    langIcon.addEventListener("click", () => {
+      langWrapper.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!langWrapper.contains(e.target)) {
+        langWrapper.classList.remove("show");
+      }
+    });
+
   </script>
 </body>
 </html>
