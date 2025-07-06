@@ -27,64 +27,107 @@
       <div class="language-switcher">
         <i class="fas fa-globe"></i>
         <select id="langSelect">
-          <option value="en" selected>EN</option>
+          <option value="en" selected>English</option>
           <option value="zh">中文</option>
         </select>
       </div>
     </div>
-  </nav>  
+  </nav>
 
   <header>
-    <h1 class="glow-text">Yu-Hsuan, Gratia Li</h1>
+    <h1 class="glow-text" data-lang="en">Yu-Hsuan, Gratia Li</h1>
+    <h1 class="glow-text" data-lang="zh" style="display: none;">李祐瑄, Gratia</h1>
     <p class="typing-text glow-text" id="typing"></p>
   </header>
 
   <section id="about" class="glass-section" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>Hi, I'm Gratia.</p>
+    <p data-lang="en">Hi, I'm Gratia.</p>
+    <p data-lang="zh" style="display:none">我是 Gratia，一位對創意與科技充滿熱情的設計師／開發者。</p>
   </section>
 
   <section id="education" class="glass-section" data-aos="fade-left">
     <h2>Education</h2>
+
     <div class="edu-entry" data-lang="en">
-      <strong>National Sun Yat-sen University</strong> <span class="tag">Master</span><br />
+      <strong>National Sun Yat-sen University</strong><span class="tag">Master</span><br />
       Dept. of Applied Mathematics, 2023 – 2025
     </div>
     <div class="edu-entry" data-lang="zh" style="display: none;">
-      <strong>國立中山大學</strong> <span class="tag">碩士</span><br />
+      <strong>國立中山大學</strong><span class="tag">碩士</span><br />
       應用數學系研究所，2023 – 2025
     </div>
+
     <div class="edu-entry" data-lang="en">
-      <strong>National Changhua University of Education</strong> <span class="tag">Bachelor</span><br />
+      <strong>National Changhua University of Education</strong><span class="tag">Bachelor</span><br />
       Dept. of Mathematics (Info track), 2020 – 2022
     </div>
     <div class="edu-entry" data-lang="zh" style="display: none;">
-      <strong>國立彰化師範大學</strong> <span class="tag">學士</span><br />
+      <strong>國立彰化師範大學</strong><span class="tag">學士</span><br />
       數學系(資訊組)，2020 – 2022
     </div>
-    <!-- 更多中英教育項目可依此格式複製 -->
+
+    <div class="edu-entry" data-lang="en">
+      <strong>Chung Yuan Christian University</strong><span class="minor_tag">Transfer</span><br />
+      Dept. of Information and Computer Engineering, 2022 – 2023
+    </div>
+    <div class="edu-entry" data-lang="zh" style="display: none;">
+      <strong>中原大學</strong><span class="minor_tag">轉學</span><br />
+      資訊工程學系研究所，2022 – 2023
+    </div>
+
+    <div class="edu-entry" data-lang="en">
+      <strong>Fu Jen Catholic University</strong><span class="minor_tag">Transfer</span><br />
+      Dept. of Applied Mathematics, 2018 – 2020
+    </div>
+    <div class="edu-entry" data-lang="zh" style="display: none;">
+      <strong>輔仁大學</strong><span class="minor_tag">轉學</span><br />
+      應用數學系(資訊數學組)，2018 – 2020
+    </div>
   </section>
 
   <section id="career" class="glass-section" data-aos="fade-right">
     <h2>Career</h2>
-    <ul>
-      <li data-lang="en"><strong>Data Scientist (RDSS)</strong> @ 1111 Job Bank | Jun 2025 – Present</li>
-      <li data-lang="zh" style="display: none;"><strong>資料科學工程師（RDSS）</strong> @ 壹一壹一科技 | 2025/06 – 至今</li>
-      <li data-lang="en"><strong>Research Assistant</strong> @ Chang Gung Memorial Hospital | Jul 2022 – Aug 2022</li>
-      <li data-lang="zh" style="display: none;"><strong>研究助理</strong> @ 林口長庚醫院早療中心 | 2022/07 – 2022/08</li>
-    </ul>
+
+    <div class="career-item" data-lang="en">
+      <h3>1111 Job Bank</h3>
+      <p><strong>Research and Development Substitute</strong> | Jun 2025 – Present</p>
+    </div>
+    <div class="career-item" data-lang="zh" style="display: none;">
+      <h3>壹一壹一科技股份有限公司(1111人力銀行)</h3>
+      <p><strong>研發替代役</strong> | 2025/06 – 至今</p>
+    </div>
+
+    <div class="career-item" data-lang="en">
+      <h3>Linkou Chang Gung Memorial Hospital</h3>
+      <p><strong>Research Assistant</strong> | Jul 2022 – Aug 2022</p>
+    </div>
+    <div class="career-item" data-lang="zh" style="display: none;">
+      <h3>林口長庚醫院早期療育中心</h3>
+      <p><strong>研究助理</strong> | 2022/07 – 2022/08</p>
+    </div>
   </section>
 
   <section id="skills" class="glass-section" data-aos="zoom-in">
     <h2>Skills</h2>
-    <ul>
-      <li>Language: TOEIC 780</li>
+  
+    <ul data-lang="en">
+      <li>Language: English - TOEIC 780</li>
       <li>Programming: Python / R / SQL / TensorFlow / Git / GitHub</li>
       <li>Tools: Power BI / Word / Power Point / Excel</li>
       <li>Features: Computer Vision / Deep Learning / NLP / Data Analysis</li>
       <li>Cloud: AWS / GCP / Akamai</li>
     </ul>
+  
+    <ul data-lang="zh" style="display: none;">
+      <li>語言能力：英文 —— 多益 780</li>
+      <li>程式技能：Python / R / SQL / TensorFlow / Git / GitHub</li>
+      <li>工具應用：Power BI / Word / PowerPoint / Excel</li>
+      <li>專長領域：電腦視覺 / 深度學習 / 自然語言處理 / 資料分析</li>
+      <li>雲端服務：AWS / GCP / Akamai</li>
+    </ul>
   </section>
+  
 
   <footer class="glass-footer" id="contact" data-aos="fade-up">
     <h2>Contact</h2>
@@ -105,7 +148,7 @@
   <script>
     const typingText = {
       en: "Hi, I'm Gratia – Bringing AI to Real-World.",
-      zh: "嗨，我是 Gratia —— 將 AI 帶入現實世界。"
+      zh: "嗨，我是 Gratia —— 把 AI 帶進現實生活。"
     };
     let i = 0;
     let speed = 60;
