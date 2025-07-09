@@ -1,4 +1,4 @@
-# Gratia's Personal Portfolio Website
+# Portfolio Website
 
 A modern, responsive personal portfolio website showcasing Gratia's background, education, career, and skills. Built with HTML, CSS, and JavaScript featuring smooth animations and a clean design.
 
