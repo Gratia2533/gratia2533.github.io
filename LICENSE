@@ -12,3 +12,19 @@ Under the following terms:
 Forking is encouraged. Please clearly indicate changes from the original and link back to: https://github.com/Gratia2533/gratia2533.github.io
 
 Full license text: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+---
+
+SPECIFIC FILE RESTRICTIONS:
+
+The following file is EXCLUDED from the above Creative Commons license and is subject to additional restrictions:
+
+- "src/parallax-bg.png" - This image file is NOT licensed for any use, including but not limited to:
+  * Personal use
+  * Commercial use
+  * Educational use
+  * Any form of copying, distribution, modification, or derivative works
+
+This file is provided for display purposes only within this specific repository and website. Any unauthorized use of this file is strictly prohibited.
+
+All other files in this repository remain subject to the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license as stated above.
