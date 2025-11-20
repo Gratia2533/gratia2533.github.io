@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for scrollbar and body */
+body {
+  @apply bg-deepVoid text-white overflow-x-hidden selection:bg-electricViolet selection:text-white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-[40px] backdrop-saturate-[150%] border border-white/20 rounded-[32px] shadow-glass transition-all duration-500 ease-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .glass-panel:hover {
+    @apply bg-white/10 border-white/40 translate-y-[-4px] shadow-[0_30px_60px_rgba(0,0,0,0.3),inset_0_0_30px_rgba(255,255,255,0.1)];
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}

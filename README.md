@@ -1,122 +1,51 @@
-# Portfolio Website
+# Gratia's Space - Volumetric Liquid Glass Portfolio
 
-A modern, responsive personal portfolio website showcasing Gratia's background, education, career, and skills. Built with HTML, CSS, and JavaScript featuring smooth animations and a clean design.
+A modern, physics-inspired personal portfolio website built with **React**, **TypeScript**, **Tailwind CSS**, and **React Three Fiber**.
 
-## 🌟 Features
+## 核心功能 (Core Features)
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Smooth Animations**: AOS (Animate on Scroll) library for engaging user experience
-- **Typing Effect**: Dynamic text animation on the welcome message
-- **Modern UI**: Clean and professional design with Google Fonts
-- **Interactive Navigation**: Smooth scrolling navigation between sections
-- **Education Showcase**: Interactive education links with school logos
-- **Skills Display**: Comprehensive skills and technology stack presentation
+*   **沉浸式視覺 (Immersive Visuals)**: 
+    *   基於 GLSL Shader 的即時流體背景 (Simplex Noise Fluid Dynamics)。
+    *   深邃靛藍 (Deep Indigo) 與霓虹極光 (Neon Aurora) 配色。
+*   **玻璃擬態設計 (Glassmorphism UI)**: 
+    *   高度客製化的 Tailwind Utility Classes (`glass-panel`)。
+    *   模擬真實玻璃的折射、邊緣光 (Rim Light) 與內部暈光。
+*   **Bento Grid 佈局**:
+    *   模組化、響應式的卡片設計展示學歷、經歷與技能。
+*   **多語言支援**:
+    *   即時中/英切換 (React State Management)。
 
-## 📋 Sections
+## 專案架構 (Architecture)
 
-- **About**: Personal introduction and background
-- **Education**: Academic history with interactive school links
-- **Career**: Professional experience timeline
-- **Skills**: Technical skills and competencies
-- **Contact**: Professional contact information and social links
+```
+src/
+├── components/
+│   ├── Background.tsx   # R3F Canvas component featuring custom GLSL Fragment Shader
+│   └── UI.tsx          # Main HTML Overlay, Bento Grid, and Framer Motion animations
+├── data/
+│   └── content.ts      # Centralized text content for i18n (English/Chinese)
+├── styles/
+│   └── index.css       # Tailwind directives & Custom CSS layers for Glass effects
+├── App.tsx             # Entry point combining WebGL Background & HTML UI
+└── main.tsx            # React DOM Root
+```
 
-## 🚀 Getting Started
+## 開發指南 (Development)
 
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No additional software installation required
-
-### Installation
-
-1. Clone the repository:
+### 1. 安裝依賴
 ```bash
-git clone https://github.com/Gratia2533/gratia2533.github.io.git
+npm install
 ```
 
-2. Navigate to the project directory:
+### 2. 啟動開發伺服器
 ```bash
-cd gratia2533.github.io
+npm run dev
 ```
 
-3. Open `index.html` in your web browser to view the website
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with flexbox and animations
-- **JavaScript**: Interactive features and typing animation
-- **AOS Library**: Animate on Scroll effects
-- **Google Fonts**: Inter font family for typography
-
-## 📁 Project Structure
-
-```
-gratia2533.github.io/
-├── index.html          # Main HTML file
-├── style.css           # CSS styles
-├── README.md           # Project documentation
-├── LICENSE             # License information
-└── src/                # Assets directory
-    ├── CYCU.svg        # School logo
-    ├── FJU.png         # School logo
-    ├── NCUE.png        # School logo
-    └── NSYSU.png       # School logo
+### 3. 建置生產版本
+```bash
+npm run build
 ```
 
-## 🎨 Customization
-
-### Adding New Sections
-
-To add a new section, follow this structure:
-
-```html
-<section id="new-section" data-aos="fade-up">
-  <h2>Section Title</h2>
-  <p>Your content here</p>
-</section>
-```
-
-### Modifying Animations
-
-The website uses AOS (Animate on Scroll) library. Available animation types:
-- `fade-up`, `fade-down`, `fade-left`, `fade-right`
-- `zoom-in`, `zoom-out`
-- `slide-up`, `slide-down`
-
-### Styling
-
-Main styles are in `style.css`. Key customization points:
-- Color scheme in CSS variables
-- Typography settings
-- Animation durations
-- Responsive breakpoints
-
-## 📄 License
-
-This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
-
-**Important Note**: The file `src/parallax-bg.png` is excluded from the Creative Commons license and is NOT licensed for any use (personal, commercial, or educational). This file is provided for display purposes only within this specific repository and website.
-
-For full license details, see [LICENSE](LICENSE) file.
-
-## 🤝 Contributing
-
-While this is a personal portfolio, suggestions and improvements are welcome:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-
-## 🙏 Acknowledgments
-
-- [AOS Library](https://michalsnik.github.io/aos/) for scroll animations
-- [Google Fonts](https://fonts.google.com/) for typography
-- [GitHub Pages](https://pages.github.com/) for hosting
-
----
-
-**Note**: This is a personal portfolio website. Please respect the licensing terms and do not use the restricted image file (`src/parallax-bg.png`) for any purpose.
+## 設計哲學 (Design Philosophy)
+本專案遵循 "Volumetric Liquid Glass" 設計語言。我們不使用靜態圖片作為背景，而是創造一個「活的」流體空間。UI 介面被視為懸浮於深淵之上的晶體，透過光影互動 (Hover Effects) 增強使用者的沉浸感。
