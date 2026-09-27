@@ -1,122 +1,63 @@
-# Portfolio Website
+# Gratia's Portfolio
 
-A modern, responsive personal portfolio website showcasing Gratia's background, education, career, and skills. Built with HTML, CSS, and JavaScript featuring smooth animations and a clean design.
+A bilingual personal portfolio built with React, TypeScript, Vite, and Plasma UI. It presents Gratia's profile, education, career experience, skills, and contact information in Traditional Chinese and English.
 
-## 🌟 Features
+## Features
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Smooth Animations**: AOS (Animate on Scroll) library for engaging user experience
-- **Typing Effect**: Dynamic text animation on the welcome message
-- **Modern UI**: Clean and professional design with Google Fonts
-- **Interactive Navigation**: Smooth scrolling navigation between sections
-- **Education Showcase**: Interactive education links with school logos
-- **Skills Display**: Comprehensive skills and technology stack presentation
+- Shared Plasma UI scene with native glass refraction, highlights, dispersion, and fusion effects.
+- Responsive hero, navigation, education, career, skills, and contact sections.
+- One-click language switch with localized content and document language updates.
+- Keyboard-accessible navigation and mobile menu, including Escape-to-close behavior.
+- Reduced-motion support and responsive layouts for desktop and mobile.
 
-## 📋 Sections
+## Requirements
 
-- **About**: Personal introduction and background
-- **Education**: Academic history with interactive school links
-- **Career**: Professional experience timeline
-- **Skills**: Technical skills and competencies
-- **Contact**: Professional contact information and social links
+- Node.js 24 (Node.js 22 or newer is supported by the package engine constraint)
+- npm
 
-## 🚀 Getting Started
+## Development
 
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No additional software installation required
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/Gratia2533/gratia2533.github.io.git
+```sh
+npm ci
+npm run dev
 ```
 
-2. Navigate to the project directory:
-```bash
-cd gratia2533.github.io
+## Build and preview
+
+```sh
+npm run typecheck
+npm run build
+npm run preview
 ```
 
-3. Open `index.html` in your web browser to view the website
+`npm run build` runs the TypeScript check and creates the production site in `dist/`.
 
-## 🛠️ Technologies Used
+## Project layout
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with flexbox and animations
-- **JavaScript**: Interactive features and typing animation
-- **AOS Library**: Animate on Scroll effects
-- **Google Fonts**: Inter font family for typography
-
-## 📁 Project Structure
-
-```
-gratia2533.github.io/
-├── index.html          # Main HTML file
-├── style.css           # CSS styles
-├── README.md           # Project documentation
-├── LICENSE             # License information
-└── src/                # Assets directory
-    ├── CYCU.svg        # School logo
-    ├── FJU.png         # School logo
-    ├── NCUE.png        # School logo
-    └── NSYSU.png       # School logo
+```text
+src/
+  App.tsx                 # App composition and language state
+  content.ts              # Typed bilingual copy and portfolio data
+  glass/GlassScene.tsx    # Shared PlasmaProvider and glass background
+  page/                   # Navigation and content sections
+  styles.css              # Responsive page and glass presentation
+  main.tsx                # React entry point
+.github/workflows/
+  deploy-pages.yml        # GitHub Pages build and deploy workflow
 ```
 
-## 🎨 Customization
+## GitHub Pages
 
-### Adding New Sections
+The repository includes a GitHub Actions workflow that builds on pushes to `main` and deploys the generated Pages artifact. Public deployment and the live GitHub Pages URL have not yet been verified. The repository's Pages publishing source must use GitHub Actions for that workflow to publish successfully.
 
-To add a new section, follow this structure:
+## Verified state
 
-```html
-<section id="new-section" data-aos="fade-up">
-  <h2>Section Title</h2>
-  <p>Your content here</p>
-</section>
-```
+The M1–M4 implementation was reviewed at commit `b851424713bb7d6a5316e9f4363715df9a566843`. Verification included a successful TypeScript/Vite production build, `git diff --check`, desktop and mobile browser review, and checks for language switching, keyboard navigation, responsive layout, Plasma effects, and portfolio content. The hero fills the viewport, the navigation aligns with the content, and the contact section shows a localized small label with a left-aligned email link. The education section shows the National Sun Yat-sen University master's degree; education and career dates are not displayed.
 
-### Modifying Animations
+The QA preview reported a missing `/favicon.ico` request (404). It did not affect the portfolio's rendering or interactions.
 
-The website uses AOS (Animate on Scroll) library. Available animation types:
-- `fade-up`, `fade-down`, `fade-left`, `fade-right`
-- `zoom-in`, `zoom-out`
-- `slide-up`, `slide-down`
+## License
 
-### Styling
+The project is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. See [LICENSE](LICENSE) for details.
 
-Main styles are in `style.css`. Key customization points:
-- Color scheme in CSS variables
-- Typography settings
-- Animation durations
-- Responsive breakpoints
-
-## 📄 License
-
-This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
-
-**Important Note**: The file `src/parallax-bg.png` is excluded from the Creative Commons license and is NOT licensed for any use (personal, commercial, or educational). This file is provided for display purposes only within this specific repository and website.
-
-For full license details, see [LICENSE](LICENSE) file.
-
-## 🤝 Contributing
-
-While this is a personal portfolio, suggestions and improvements are welcome:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-
-## 🙏 Acknowledgments
-
-- [AOS Library](https://michalsnik.github.io/aos/) for scroll animations
-- [Google Fonts](https://fonts.google.com/) for typography
-- [GitHub Pages](https://pages.github.com/) for hosting
-
----
-
-**Note**: This is a personal portfolio website. Please respect the licensing terms and do not use the restricted image file (`src/parallax-bg.png`) for any purpose.
+`src/parallax-bg.png` is excluded from that license and is provided only for display within this repository and website. It must not be reused.
