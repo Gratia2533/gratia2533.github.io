@@ -141,7 +141,7 @@ h1 { max-width: 780px; margin: 0 auto; font-size: clamp(3rem, 6vw, 5.5rem); line
 
 .resume { display: grid; gap: 16px; padding-bottom: 16px; }
 .content-panel { min-width: 0; }
-.content-panel h2, .contact-panel h2 { margin: 0 0 28px; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.045em; }
+.content-panel h2 { margin: 0 0 28px; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.045em; }
 .education-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
 .education-item { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 20px 0; border-top: 1px solid var(--line); }
 .education-item img { width: 56px; height: 56px; object-fit: contain; filter: saturate(0.8); }
@@ -161,9 +161,9 @@ h1 { max-width: 780px; margin: 0 auto; font-size: clamp(3rem, 6vw, 5.5rem); line
 .skills-list dd { margin: 0; color: var(--muted); }
 
 .footer { padding: 16px 0 42px; }
-.contact-content { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
-.contact-content h2 { margin-bottom: 10px; }
-.contact-email { color: var(--ink); font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 700; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.contact-content { display: flex; align-items: center; min-height: 96px; }
+.contact-email { color: var(--ink); font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+.contact-email:hover { color: var(--accent); }
 .license-note { margin: 20px 10px 0; color: #5a5064; font-size: 0.78rem; text-align: center; }
 .license-note a { text-underline-offset: 3px; }
 
@@ -202,7 +202,6 @@ h1 { max-width: 780px; margin: 0 auto; font-size: clamp(3rem, 6vw, 5.5rem); line
   .education-item { grid-template-columns: 44px minmax(0, 1fr); }
   .education-item img { width: 44px; height: 44px; }
   .skills-list div { grid-template-columns: 1fr; gap: 3px; }
-  .contact-content { align-items: start; flex-direction: column; gap: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

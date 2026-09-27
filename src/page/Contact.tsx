@@ -8,12 +8,8 @@ interface ContactProps {
 export function Contact({ language }: ContactProps) {
   return (
     <footer id="contact" className="footer section-anchor">
-      <Plasma as="section" className="contact-panel" padding={28} lean={false} aria-labelledby="contact-title">
+      <Plasma as="section" className="contact-panel" padding={28} lean={false} aria-label={text(copy.headings.contact, language)}>
         <div className="panel-content contact-content">
-          <div>
-            <p className="section-number">04</p>
-            <h2 id="contact-title">{text(copy.headings.contact, language)}</h2>
-          </div>
           <a className="contact-email" href="mailto:gratia2533@gmail.com">
             gratia2533@gmail.com
           </a>
