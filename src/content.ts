@@ -46,8 +46,6 @@ export const copy = {
       zh: "我是 Gratia，一位對創意與科技充滿熱情的設計師／開發者。",
     },
     explore: { en: "Explore my work", zh: "探索我的經歷" },
-    dragHint: { en: "Drag me · I snap and fuse", zh: "拖曳我 · 感受吸附與融合" },
-    badge: { en: "AI → Reality", zh: "AI → 現實" },
   },
   headings: {
     education: { en: "Education", zh: "學歷" },
@@ -62,11 +60,11 @@ export const copy = {
     },
     action: { en: "Visit GitHub", zh: "前往 GitHub" },
   },
-  languageLabel: { en: "Language", zh: "語言" },
   skipLink: { en: "Skip to content", zh: "跳至主要內容" },
   primaryNavigation: { en: "Primary navigation", zh: "主要導覽" },
   openMenu: { en: "Open menu", zh: "開啟選單" },
   closeMenu: { en: "Close menu", zh: "關閉選單" },
+  switchLanguage: { en: "Switch to Chinese", zh: "切換為英文" },
 } as const;
 
 export const education: EducationItem[] = [

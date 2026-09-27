@@ -30,9 +30,6 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
         padding={10}
         aria-label={text(copy.primaryNavigation, language)}
       >
-        <a className="brand" href="#top" aria-label="Gratia's Space home">
-          G<span>.</span>
-        </a>
         <button
           className="menu-toggle"
           type="button"
@@ -52,18 +49,18 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
             </a>
           ))}
         </div>
-        <label className="language-control">
-          <span aria-hidden="true">◎</span>
-          <span className="sr-only">{text(copy.languageLabel, language)}</span>
-          <select
-            value={language}
-            onChange={(event) => onLanguageChange(event.target.value as Language)}
-            aria-label={text(copy.languageLabel, language)}
-          >
-            <option value="en">EN</option>
-            <option value="zh">中文</option>
-          </select>
-        </label>
+        <button
+          className="language-toggle"
+          type="button"
+          aria-label={text(copy.switchLanguage, language)}
+          title={text(copy.switchLanguage, language)}
+          onClick={() => onLanguageChange(language === "en" ? "zh" : "en")}
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.3 2.45 3.5 5.45 3.5 9S14.3 18.55 12 21M12 3C9.7 5.45 8.5 8.45 8.5 12S9.7 18.55 12 21" />
+          </svg>
+        </button>
       </Plasma>
     </div>
   );

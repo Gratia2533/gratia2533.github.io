@@ -49,23 +49,6 @@ export function Introduction({ language }: IntroductionProps) {
             </a>
           </div>
         </Plasma>
-
-        <Plasma
-          className="hero-orb"
-          draggable
-          snap
-          padding={18}
-          radius={48}
-          tint="#c8b8ff"
-          opacity={0.14}
-          elevation={0.72}
-          aria-label={text(copy.hero.dragHint, language)}
-        >
-          <div className="panel-content orb-content">
-            <strong>{text(copy.hero.badge, language)}</strong>
-            <small>{text(copy.hero.dragHint, language)}</small>
-          </div>
-        </Plasma>
       </div>
     </header>
   );
