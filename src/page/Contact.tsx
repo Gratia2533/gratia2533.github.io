@@ -25,7 +25,7 @@ export function Contact({ language }: ContactProps) {
           CC BY-NC-SA 4.0
         </a>
         . Please fork with attribution.
-        {" "}Page design inspired by{" "}
+        {" "}Page UI built with{" "}
         <a href="https://github.com/CruxGarden/plasma-ui" target="_blank" rel="noreferrer">
           plasma-ui
         </a>
