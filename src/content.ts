@@ -11,14 +11,12 @@ interface EducationItem {
   school: LocalizedText;
   degree: LocalizedText;
   detail: LocalizedText;
-  period: string;
   logo: string;
 }
 
 interface CareerItem {
   company: LocalizedText;
   role: LocalizedText;
-  period: LocalizedText;
 }
 
 interface SkillGroup {
@@ -65,7 +63,6 @@ export const education: EducationItem[] = [
     school: { en: "National Sun Yat-sen University", zh: "國立中山大學" },
     degree: { en: "Master", zh: "碩士" },
     detail: { en: "Department of Applied Mathematics", zh: "應用數學系研究所" },
-    period: "2023 – 2025",
     logo: nsysuLogo,
   },
 ];
@@ -74,12 +71,10 @@ export const career: CareerItem[] = [
   {
     company: { en: "1111 Job Bank", zh: "壹一壹一科技股份有限公司（1111 人力銀行）" },
     role: { en: "Research and Development Substitute", zh: "研發替代役" },
-    period: { en: "Jun 2025 – Present", zh: "2025/06 – 至今" },
   },
   {
     company: { en: "Linkou Chang Gung Memorial Hospital", zh: "林口長庚醫院早期療育中心" },
     role: { en: "Research Assistant", zh: "研究助理" },
-    period: { en: "Jul 2022 – Aug 2022", zh: "2022/07 – 2022/08" },
   },
 ];
 

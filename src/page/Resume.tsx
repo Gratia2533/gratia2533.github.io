@@ -22,7 +22,6 @@ export function Resume({ language }: ResumeProps) {
                     <span>{text(item.degree, language)}</span>
                   </div>
                   <p>{text(item.detail, language)}</p>
-                  <time>{item.period}</time>
                 </div>
               </article>
             ))}
@@ -41,7 +40,6 @@ export function Resume({ language }: ResumeProps) {
                   <span className="timeline-dot" aria-hidden="true" />
                   <h3>{text(item.company, language)}</h3>
                   <p>{text(item.role, language)}</p>
-                  <time>{text(item.period, language)}</time>
                 </article>
               ))}
             </div>
