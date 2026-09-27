@@ -83,7 +83,7 @@ img { max-width: 100%; }
 .nav-links { grid-column: 2; display: flex; align-items: center; justify-content: center; gap: 28px; }
 .nav-links a {
   color: #352d41;
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -102,6 +102,7 @@ img { max-width: 100%; }
   color: var(--ink);
   background: transparent;
   cursor: pointer;
+  margin-right: 12px;
 }
 .language-toggle:hover { background: rgb(101 77 145 / 0.1); }
 .language-toggle svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
@@ -141,7 +142,7 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-heig
 .resume { display: grid; gap: 16px; padding-bottom: 16px; }
 .content-panel { min-width: 0; }
 .content-panel h2, .contact-panel h2 { margin: 0 0 28px; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.045em; }
-.education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 34px; }
+.education-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
 .education-item { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 20px 0; border-top: 1px solid var(--line); }
 .education-item img { width: 56px; height: 56px; object-fit: contain; filter: saturate(0.8); }
 .item-heading { display: flex; align-items: start; gap: 10px; }
@@ -163,7 +164,7 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-heig
 .footer { padding: 16px 0 42px; }
 .contact-content { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
 .contact-content h2 { margin-bottom: 10px; }
-.contact-content p:last-child { margin: 0; color: var(--muted); }
+.contact-email { color: var(--ink); font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 700; text-underline-offset: 4px; overflow-wrap: anywhere; }
 .license-note { margin: 20px 10px 0; color: #5a5064; font-size: 0.78rem; text-align: center; }
 .license-note a { text-underline-offset: 3px; }
 

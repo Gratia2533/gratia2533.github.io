@@ -1,6 +1,3 @@
-import cycuLogo from "./CYCU.svg";
-import fjuLogo from "./FJU.png";
-import ncueLogo from "./NCUE.png";
 import nsysuLogo from "./NSYSU.png";
 
 export type Language = "en" | "zh";
@@ -38,12 +35,15 @@ export const copy = {
     contact: { en: "Contact", zh: "聯絡" },
   },
   hero: {
-    eyebrow: { en: "AI · DATA · SOFTWARE", zh: "AI · 資料 · 軟體" },
+    eyebrow: {
+      en: "Applied AI, LLM Agents, RAG Systems, Production AI, Computer Vision",
+      zh: "Applied AI, LLM Agents, RAG Systems, Production AI, Computer Vision",
+    },
     name: { en: "Yu-Hsuan, Gratia Li", zh: "李祐瑄, Gratia" },
-    tagline: { en: "Bringing AI into the real world.", zh: "把 AI 帶進現實生活。" },
+    tagline: { en: "Bringing AI into the real world.", zh: "讓 AI 不只理解世界，也能真正參與世界" },
     introduction: {
-      en: "Hi, I'm Gratia.",
-      zh: "我是 Gratia，一位對創意與科技充滿熱情的設計師／開發者。",
+      en: "I'm Gratia. I like to get to the heart of things, question assumptions, then build the answer myself.",
+      zh: "I'm Gratia. I like to get to the heart of things, question assumptions, then build the answer myself.",
     },
     explore: { en: "Explore my work", zh: "探索我的經歷" },
   },
@@ -52,13 +52,6 @@ export const copy = {
     career: { en: "Career", zh: "工作經歷" },
     skills: { en: "Skills", zh: "專業技能" },
     contact: { en: "Let's connect", zh: "保持聯絡" },
-  },
-  contact: {
-    body: {
-      en: "See what I'm building and learning on GitHub.",
-      zh: "歡迎到 GitHub 看看我正在開發與學習的內容。",
-    },
-    action: { en: "Visit GitHub", zh: "前往 GitHub" },
   },
   skipLink: { en: "Skip to content", zh: "跳至主要內容" },
   primaryNavigation: { en: "Primary navigation", zh: "主要導覽" },
@@ -74,33 +67,6 @@ export const education: EducationItem[] = [
     detail: { en: "Department of Applied Mathematics", zh: "應用數學系研究所" },
     period: "2023 – 2025",
     logo: nsysuLogo,
-  },
-  {
-    school: { en: "National Changhua University of Education", zh: "國立彰化師範大學" },
-    degree: { en: "Bachelor", zh: "學士" },
-    detail: {
-      en: "Department of Mathematics (Information track)",
-      zh: "數學系（資訊組）",
-    },
-    period: "2020 – 2022",
-    logo: ncueLogo,
-  },
-  {
-    school: { en: "Chung Yuan Christian University", zh: "中原大學" },
-    degree: { en: "Transfer", zh: "轉學" },
-    detail: {
-      en: "Department of Information and Computer Engineering",
-      zh: "資訊工程學系研究所",
-    },
-    period: "2022 – 2023",
-    logo: cycuLogo,
-  },
-  {
-    school: { en: "Fu Jen Catholic University", zh: "輔仁大學" },
-    degree: { en: "Transfer", zh: "轉學" },
-    detail: { en: "Department of Applied Mathematics", zh: "應用數學系（資訊數學組）" },
-    period: "2018 – 2020",
-    logo: fjuLogo,
   },
 ];
 
@@ -119,33 +85,36 @@ export const career: CareerItem[] = [
 
 export const skills: SkillGroup[] = [
   {
-    label: { en: "Language", zh: "語言能力" },
-    value: { en: "English · TOEIC 780", zh: "英文 · 多益 780" },
+    label: { en: "Languages", zh: "語言能力" },
+    value: { en: "Chinese; English technical reading and documentation", zh: "中文、英文技術閱讀／文件撰寫" },
   },
   {
     label: { en: "Programming", zh: "程式技能" },
     value: {
-      en: "Python / R / SQL / TensorFlow / Git / GitHub",
-      zh: "Python / R / SQL / TensorFlow / Git / GitHub",
+      en: "Python, TypeScript, SQL",
+      zh: "Python、TypeScript、SQL",
     },
   },
   {
     label: { en: "Tools", zh: "工具應用" },
     value: {
-      en: "Power BI / Word / PowerPoint / Excel",
-      zh: "Power BI / Word / PowerPoint / Excel",
+      en: "Git, Docker, LangChain, LiteLLM, MCP, TensorFlow",
+      zh: "Git、Docker、LangChain、LiteLLM、MCP、TensorFlow",
     },
   },
   {
-    label: { en: "Focus", zh: "專長領域" },
+    label: { en: "Expertise", zh: "專長領域" },
     value: {
-      en: "Computer Vision / Deep Learning / NLP / Data Analysis",
-      zh: "電腦視覺 / 深度學習 / 自然語言處理 / 資料分析",
+      en: "LLM, AI Agents, RAG, Voice AI, Computer Vision, Low-SNR Object Detection, NMS, Machine Learning",
+      zh: "LLM、Agent、RAG、語音 AI、Computer Vision、低信噪比物件偵測、NMS、Machine Learning",
     },
   },
   {
-    label: { en: "Cloud", zh: "雲端服務" },
-    value: { en: "AWS / GCP / Akamai", zh: "AWS / GCP / Akamai" },
+    label: { en: "Cloud & Infrastructure", zh: "雲端服務" },
+    value: {
+      en: "AWS Serverless, Containers, Databases, OpenSearch, Linux",
+      zh: "AWS Serverless、Container、Database、OpenSearch、Linux",
+    },
   },
 ];
 

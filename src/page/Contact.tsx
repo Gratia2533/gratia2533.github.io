@@ -13,10 +13,9 @@ export function Contact({ language }: ContactProps) {
           <div>
             <p className="section-number">04</p>
             <h2 id="contact-title">{text(copy.headings.contact, language)}</h2>
-            <p>{text(copy.contact.body, language)}</p>
           </div>
-          <a className="github-link" href="https://github.com/Gratia2533" target="_blank" rel="noreferrer">
-            {text(copy.contact.action, language)} <span aria-hidden="true">↗</span>
+          <a className="contact-email" href="mailto:gratia2533@gmail.com">
+            gratia2533@gmail.com
           </a>
         </div>
       </Plasma>
@@ -26,6 +25,11 @@ export function Contact({ language }: ContactProps) {
           CC BY-NC-SA 4.0
         </a>
         . Please fork with attribution.
+        {" "}Page design inspired by{" "}
+        <a href="https://github.com/CruxGarden/plasma-ui" target="_blank" rel="noreferrer">
+          plasma-ui
+        </a>
+        .
       </p>
     </footer>
   );
