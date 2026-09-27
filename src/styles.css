@@ -67,6 +67,8 @@ img { max-width: 100%; }
   align-items: center;
   gap: 20px;
 }
+.content-panel,
+.contact-panel { position: relative; }
 .content-panel::before,
 .contact-panel::before {
   content: "";
