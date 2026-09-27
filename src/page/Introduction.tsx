@@ -42,7 +42,7 @@ export function Introduction({ language }: IntroductionProps) {
           {typedTagline}<span className="typing-caret" aria-hidden="true" />
         </p>
         <p className="hero-copy">{text(copy.hero.introduction, language)}</p>
-        <Plasma as="a" className="primary-link" href="#education" radius={999} padding={14} opacity={0.38} frost={0.5} elevation={0.7} fuse={false}>
+        <Plasma as="a" className="primary-link" href="#education" radius={999} padding={14} opacity={0.38} frost={0.5} elevation={0.35} fuse={false}>
           {text(copy.hero.explore, language)} <span aria-hidden="true">↓</span>
         </Plasma>
       </section>
