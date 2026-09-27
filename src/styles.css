@@ -67,7 +67,6 @@ img { max-width: 100%; }
   align-items: center;
   gap: 20px;
 }
-.site-nav::before,
 .content-panel::before,
 .contact-panel::before {
   content: "";
@@ -211,7 +210,6 @@ h1 { max-width: 780px; margin: 0 auto; font-size: clamp(3rem, 6vw, 5.5rem); line
 }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .site-nav::before,
   .content-panel::before,
   .contact-panel::before { background: rgb(255 249 244 / 0.76); }
 }
