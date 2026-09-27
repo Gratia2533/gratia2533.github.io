@@ -37,6 +37,19 @@ jobs:
       pages: write
       id-token: write
     steps:
+      - name: Verify Pages publishing source
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+        run: |
+          build_type="$(curl --fail --silent --show-error \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$GH_REPOSITORY/pages" | jq -r '.build_type')"
+          if [ "$build_type" != "workflow" ]; then
+            echo "::error::GitHub Pages source is '$build_type'. Select GitHub Actions under Settings > Pages."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

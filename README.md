@@ -48,13 +48,7 @@ src/
 
 ## GitHub Pages
 
-The repository includes a GitHub Actions workflow that builds on pushes to `main` and deploys the generated Pages artifact. Public deployment and the live GitHub Pages URL have not yet been verified. The repository's Pages publishing source must use GitHub Actions for that workflow to publish successfully.
-
-## Verified state
-
-The M1–M4 implementation was reviewed at commit `b851424713bb7d6a5316e9f4363715df9a566843`. Verification included a successful TypeScript/Vite production build, `git diff --check`, desktop and mobile browser review, and checks for language switching, keyboard navigation, responsive layout, Plasma effects, and portfolio content. The hero fills the viewport, the navigation aligns with the content, and the contact section shows a localized small label with a left-aligned email link. The education section shows the National Sun Yat-sen University master's degree; education and career dates are not displayed.
-
-The QA preview reported a missing `/favicon.ico` request (404). It did not affect the portfolio's rendering or interactions.
+In repository **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**. Pushes to `main` trigger `deploy-pages.yml`, which builds the site and publishes `dist/`. The deploy job checks this setting and reports a configuration error if it changes.
 
 ## License
 
