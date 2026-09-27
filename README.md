@@ -52,7 +52,7 @@ The repository includes a GitHub Actions workflow that builds on pushes to `main
 
 ## Verified state
 
-The M1–M4 implementation was reviewed at commit `1fa27d13247bd9196097fe4f3a67b7c6ef4e3b5d`. Verification included a successful TypeScript/Vite production build, `git diff --check`, desktop and mobile browser review, and checks for language switching, keyboard navigation, responsive layout, Plasma effects, and portfolio content. The education section currently shows the National Sun Yat-sen University master's degree; education and career dates are not displayed.
+The M1–M4 implementation was reviewed at commit `b851424713bb7d6a5316e9f4363715df9a566843`. Verification included a successful TypeScript/Vite production build, `git diff --check`, desktop and mobile browser review, and checks for language switching, keyboard navigation, responsive layout, Plasma effects, and portfolio content. The hero fills the viewport, the navigation aligns with the content, and the contact section shows a localized small label with a left-aligned email link. The education section shows the National Sun Yat-sen University master's degree; education and career dates are not displayed.
 
 The QA preview reported a missing `/favicon.ico` request (404). It did not affect the portfolio's rendering or interactions.
 
