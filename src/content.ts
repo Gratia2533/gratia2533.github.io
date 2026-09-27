@@ -49,7 +49,7 @@ export const copy = {
     education: { en: "Education", zh: "學歷" },
     career: { en: "Career", zh: "工作經歷" },
     skills: { en: "Skills", zh: "專業技能" },
-    contact: { en: "Let's connect", zh: "保持聯絡" },
+    contact: { en: "Contact", zh: "聯絡方式" },
   },
   skipLink: { en: "Skip to content", zh: "跳至主要內容" },
   primaryNavigation: { en: "Primary navigation", zh: "主要導覽" },

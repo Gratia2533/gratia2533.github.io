@@ -10,6 +10,7 @@ export function Contact({ language }: ContactProps) {
     <footer id="contact" className="footer section-anchor">
       <Plasma as="section" className="contact-panel" padding={28} lean={false} aria-label={text(copy.headings.contact, language)}>
         <div className="panel-content contact-content">
+          <p className="section-number">04 {text(copy.headings.contact, language)}</p>
           <a className="contact-email" href="mailto:gratia2533@gmail.com">
             gratia2533@gmail.com
           </a>
