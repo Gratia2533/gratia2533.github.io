@@ -69,7 +69,6 @@ img { max-width: 100%; }
 }
 .site-nav::before,
 .content-panel::before,
-.hero-card::before,
 .contact-panel::before {
   content: "";
   position: absolute;
@@ -89,6 +88,7 @@ img { max-width: 100%; }
   text-decoration: none;
 }
 .nav-links a:hover { color: var(--accent); }
+.mobile-nav-links { display: none; }
 .language-toggle {
   grid-column: 3;
   justify-self: end;
@@ -110,11 +110,9 @@ img { max-width: 100%; }
 
 .page-shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .section-anchor { scroll-margin-top: 110px; }
-.hero { min-height: 100svh; display: grid; align-items: center; padding: 120px 0 72px; }
-.hero-cluster { position: relative; }
-.hero-card { min-height: 480px; display: flex; align-items: center; }
+.hero { min-height: 100svh; display: grid; place-items: center; padding: 112px 0 64px; }
 .panel-content { position: relative; z-index: 2; width: 100%; }
-.hero-content { max-width: 760px; }
+.hero-content { width: 100%; max-width: 920px; margin: 0 auto; text-align: center; }
 .eyebrow, .section-number {
   margin: 0 0 18px;
   color: var(--accent);
@@ -123,21 +121,23 @@ img { max-width: 100%; }
   letter-spacing: 0.2em;
 }
 h1, h2, h3 { font-family: "Manrope", sans-serif; }
-h1 { max-width: 780px; margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.98; letter-spacing: -0.05em; }
+h1 { max-width: 780px; margin: 0 auto; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.98; letter-spacing: -0.05em; }
 .tagline { min-height: 1.6em; margin: 32px 0 10px; font-size: clamp(1.3rem, 2.4vw, 2rem); font-weight: 600; }
 .typing-caret { display: inline-block; width: 2px; height: 1em; margin-left: 5px; vertical-align: -0.08em; background: currentColor; animation: blink 0.9s step-end infinite; }
-.hero-copy { max-width: 590px; margin: 0 0 30px; color: var(--muted); font-size: 1.05rem; }
-.primary-link, .github-link {
+.hero-copy { max-width: 680px; margin: 0 auto 30px; color: var(--muted); font-size: 1.05rem; }
+.primary-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 12px 18px;
   border-radius: 999px;
-  color: white;
-  background: #302440;
+  color: var(--ink);
+  background: rgb(255 249 244 / 0.22);
+  border: 1px solid rgb(255 255 255 / 0.58);
   font-weight: 700;
   text-decoration: none;
 }
+.primary-link:hover { background: rgb(255 249 244 / 0.38); }
 
 .resume { display: grid; gap: 16px; padding-bottom: 16px; }
 .content-panel { min-width: 0; }
@@ -175,34 +175,30 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-heig
   .nav-shell { top: 10px; }
   .site-nav { grid-template-columns: auto 1fr auto; gap: 12px; }
   .menu-toggle { grid-column: 1; display: block; }
-  .nav-links {
+  .nav-links { display: none; }
+  .mobile-nav-links {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
     left: 0;
-    display: none;
+    z-index: 2;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 12px;
-    border: 1px solid rgb(255 255 255 / 0.65);
-    border-radius: 22px;
-    background: rgb(255 247 238 / 0.92);
-    box-shadow: 0 18px 60px rgb(46 31 54 / 0.18);
-    backdrop-filter: blur(18px);
+    border: 1px solid rgb(255 255 255 / 0.56);
+    background: rgb(255 247 238 / 0.72);
+    backdrop-filter: blur(20px);
   }
-  .nav-links[data-open] { display: flex; }
-  .nav-links a { padding: 10px 12px; }
-  .hero-card { min-height: 500px; }
+  .mobile-nav-links a { padding: 12px; text-align: center; text-decoration: none; font-weight: 700; }
+  .mobile-nav-links a:hover { color: var(--accent); }
   .resume-row { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 600px) {
   .nav-shell, .page-shell { width: min(100% - 24px, 1120px); }
-  .hero { padding-top: 100px; }
-  .hero-card { min-height: 510px; }
+  .hero { padding: 100px 12px 48px; }
   h1 { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-  .education-grid { grid-template-columns: 1fr; }
   .education-item { grid-template-columns: 44px minmax(0, 1fr); }
   .education-item img { width: 44px; height: 44px; }
   .skills-list div { grid-template-columns: 1fr; gap: 3px; }
@@ -218,6 +214,5 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-heig
 @supports not (backdrop-filter: blur(1px)) {
   .site-nav::before,
   .content-panel::before,
-  .hero-card::before,
   .contact-panel::before { background: rgb(255 249 244 / 0.76); }
 }

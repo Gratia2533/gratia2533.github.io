@@ -35,21 +35,17 @@ export function Introduction({ language }: IntroductionProps) {
 
   return (
     <header id="about" className="hero section-anchor">
-      <div className="hero-cluster">
-        <Plasma as="section" className="hero-card" padding={32} elevation={0.58} aria-labelledby="hero-title">
-          <div className="panel-content hero-content">
-            <p className="eyebrow">{text(copy.hero.eyebrow, language)}</p>
-            <h1 id="hero-title">{text(copy.hero.name, language)}</h1>
-            <p className="tagline" aria-label={tagline}>
-              {typedTagline}<span className="typing-caret" aria-hidden="true" />
-            </p>
-            <p className="hero-copy">{text(copy.hero.introduction, language)}</p>
-            <a className="primary-link" href="#career">
-              {text(copy.hero.explore, language)} <span aria-hidden="true">↓</span>
-            </a>
-          </div>
+      <section className="hero-content" aria-labelledby="hero-title">
+        <p className="eyebrow">{text(copy.hero.eyebrow, language)}</p>
+        <h1 id="hero-title">{text(copy.hero.name, language)}</h1>
+        <p className="tagline" aria-label={tagline}>
+          {typedTagline}<span className="typing-caret" aria-hidden="true" />
+        </p>
+        <p className="hero-copy">{text(copy.hero.introduction, language)}</p>
+        <Plasma as="a" className="primary-link" href="#education" radius={999} padding={14} opacity={0.38} frost={0.5} elevation={0.7} fuse={false}>
+          {text(copy.hero.explore, language)} <span aria-hidden="true">↓</span>
         </Plasma>
-      </div>
+      </section>
     </header>
   );
 }

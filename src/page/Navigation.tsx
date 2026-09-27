@@ -34,7 +34,7 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
           className="menu-toggle"
           type="button"
           aria-expanded={open}
-          aria-controls="primary-links"
+          aria-controls={open ? "primary-links" : undefined}
           onClick={() => setOpen((value) => !value)}
         >
           <span aria-hidden="true">{open ? "×" : "☰"}</span>
@@ -42,9 +42,9 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
             {text(open ? copy.closeMenu : copy.openMenu, language)}
           </span>
         </button>
-        <div id="primary-links" className="nav-links" data-open={open || undefined}>
+        <div className="nav-links">
           {links.map((link) => (
-            <a key={link} href={`#${link}`} onClick={() => setOpen(false)}>
+            <a key={link} href={`#${link}`}>
               {text(copy.nav[link], language)}
             </a>
           ))}
@@ -62,6 +62,15 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
           </svg>
         </button>
       </Plasma>
+      {open && (
+        <Plasma as="div" id="primary-links" className="mobile-nav-links" radius={26} padding={12} opacity={0.58} frost={0.78} elevation={0.72} fuse={false} lean={false}>
+          {links.map((link) => (
+            <a key={link} href={`#${link}`} onClick={() => setOpen(false)}>
+              {text(copy.nav[link], language)}
+            </a>
+          ))}
+        </Plasma>
+      )}
     </div>
   );
 }
