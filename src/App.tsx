@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { copy, text, type Language } from "./content";
 import { GlassScene } from "./glass/GlassScene";
 import { Contact } from "./page/Contact";
@@ -8,18 +8,28 @@ import { Resume } from "./page/Resume";
 
 const LANGUAGE_KEY = "gratia-portfolio-language";
 
-function getInitialLanguage(): Language {
-  try {
-    const stored = window.localStorage.getItem(LANGUAGE_KEY);
-    if (stored === "en" || stored === "zh") return stored;
-  } catch {
-    // Browser privacy settings may disable persistent storage.
-  }
-  return navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+interface AppProps {
+  initialLanguage: Language;
 }
 
-export function App() {
-  const [language, setLanguage] = useState<Language>(getInitialLanguage);
+export function languageFromPathname(pathname: string): Language {
+  return pathname === "/zh" || pathname.startsWith("/zh/") ? "zh" : "en";
+}
+
+function pathForLanguage(language: Language): string {
+  return language === "zh" ? "/zh/" : "/";
+}
+
+export function App({ initialLanguage }: AppProps) {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
+
+  const changeLanguage = useCallback((nextLanguage: Language) => {
+    const nextPath = pathForLanguage(nextLanguage);
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState(null, "", `${nextPath}${window.location.hash}`);
+    }
+    setLanguage(nextLanguage);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language === "zh" ? "zh-Hant" : "en";
@@ -30,12 +40,20 @@ export function App() {
     }
   }, [language]);
 
+  useEffect(() => {
+    const syncLanguageFromRoute = () => {
+      setLanguage(languageFromPathname(window.location.pathname));
+    };
+    window.addEventListener("popstate", syncLanguageFromRoute);
+    return () => window.removeEventListener("popstate", syncLanguageFromRoute);
+  }, []);
+
   return (
     <GlassScene>
       <a className="skip-link" href="#main-content">
         {text(copy.skipLink, language)}
       </a>
-      <Navigation language={language} onLanguageChange={setLanguage} />
+      <Navigation language={language} onLanguageChange={changeLanguage} />
       <div id="top" className="page-shell">
         <Introduction language={language} />
         <Resume language={language} />
