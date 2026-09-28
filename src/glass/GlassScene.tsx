@@ -21,6 +21,7 @@ export function GlassScene({ children }: GlassSceneProps) {
 
     const image = new Image();
     let animationFrame: number | null = null;
+    let disposed = false;
 
     const draw = () => {
       animationFrame = null;
@@ -115,7 +116,7 @@ export function GlassScene({ children }: GlassSceneProps) {
     };
 
     const scheduleDraw = () => {
-      if (animationFrame === null) {
+      if (!disposed && animationFrame === null) {
         animationFrame = window.requestAnimationFrame(draw);
       }
     };
@@ -127,6 +128,7 @@ export function GlassScene({ children }: GlassSceneProps) {
     scheduleDraw();
     window.addEventListener("resize", scheduleDraw);
     return () => {
+      disposed = true;
       image.removeEventListener("load", scheduleDraw);
       window.removeEventListener("resize", scheduleDraw);
       if (animationFrame !== null) {
