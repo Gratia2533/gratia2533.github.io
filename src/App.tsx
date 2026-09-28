@@ -6,8 +6,6 @@ import { Introduction } from "./page/Introduction";
 import { Navigation } from "./page/Navigation";
 import { Resume } from "./page/Resume";
 
-const LANGUAGE_KEY = "gratia-portfolio-language";
-
 interface AppProps {
   initialLanguage: Language;
 }
@@ -33,11 +31,6 @@ export function App({ initialLanguage }: AppProps) {
 
   useEffect(() => {
     document.documentElement.lang = language === "zh" ? "zh-Hant" : "en";
-    try {
-      window.localStorage.setItem(LANGUAGE_KEY, language);
-    } catch {
-      // The language still applies for this session when storage is unavailable.
-    }
   }, [language]);
 
   useEffect(() => {
