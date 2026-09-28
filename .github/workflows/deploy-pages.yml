@@ -32,6 +32,7 @@ jobs:
           name: performance-reports
           path: .lighthouseci
           if-no-files-found: ignore
+          include-hidden-files: true
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v4

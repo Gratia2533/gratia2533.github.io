@@ -9,6 +9,11 @@ module.exports = {
         throttlingMethod: "simulate",
         locale: "en-US",
         onlyCategories: ["performance"],
+        chromeFlags: [
+          "--use-gl=angle",
+          "--use-angle=swiftshader",
+          "--enable-unsafe-swiftshader",
+        ].join(" "),
       },
     },
     assert: {
