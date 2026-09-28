@@ -9,6 +9,7 @@ module.exports = {
         throttlingMethod: "simulate",
         locale: "en-US",
         onlyCategories: ["performance"],
+        disableFullPageScreenshot: true,
         chromeFlags: [
           "--use-gl=angle",
           "--use-angle=swiftshader",
