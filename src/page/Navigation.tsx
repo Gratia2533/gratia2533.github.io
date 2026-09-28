@@ -63,7 +63,7 @@ export function Navigation({ language, onLanguageChange }: NavigationProps) {
         </button>
       </Plasma>
       {open && (
-        <Plasma as="div" id="primary-links" className="mobile-nav-links" radius={26} padding={12} opacity={0.58} frost={0.78} elevation={0.72} fuse={false} lean={false}>
+        <Plasma as="div" id="primary-links" className="mobile-nav-links" radius={26} padding={12} opacity={0.58} frost={0.78} elevation={0.36} fuse={false} lean={false}>
           {links.map((link) => (
             <a key={link} href={`#${link}`} onClick={() => setOpen(false)}>
               {text(copy.nav[link], language)}

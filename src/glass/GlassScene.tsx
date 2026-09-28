@@ -135,7 +135,7 @@ export function GlassScene({ children }: GlassSceneProps) {
           tint="#fff5ef"
           opacity={0.08}
           frost={0.12}
-          elevation={0.42}
+          elevation={0.21}
           refraction={1.55}
           dispersion={1.4}
           rim={1.3}
