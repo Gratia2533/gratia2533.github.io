@@ -1,4 +1,6 @@
-import nsysuLogo from "./NSYSU.png";
+import nsysuLogo56 from "./NSYSU-56.webp";
+import nsysuLogo112 from "./NSYSU-112.webp";
+import nsysuLogo168 from "./NSYSU-168.webp";
 
 export type Language = "en" | "zh";
 
@@ -11,7 +13,10 @@ interface EducationItem {
   school: LocalizedText;
   degree: LocalizedText;
   detail: LocalizedText;
-  logo: string;
+  logo: {
+    src: string;
+    srcSet: string;
+  };
 }
 
 interface CareerItem {
@@ -63,7 +68,10 @@ export const education: EducationItem[] = [
     school: { en: "National Sun Yat-sen University", zh: "國立中山大學" },
     degree: { en: "Master", zh: "碩士" },
     detail: { en: "Department of Applied Mathematics", zh: "應用數學系研究所" },
-    logo: nsysuLogo,
+    logo: {
+      src: nsysuLogo56,
+      srcSet: `${nsysuLogo56} 56w, ${nsysuLogo112} 112w, ${nsysuLogo168} 168w`,
+    },
   },
 ];
 

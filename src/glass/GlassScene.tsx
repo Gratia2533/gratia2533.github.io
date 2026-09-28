@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { PlasmaProvider } from "@cruxgarden/plasma-ui";
-import illustrationUrl from "../parallax-bg.png";
+import illustrationUrl from "../parallax-bg.webp";
 
 interface GlassSceneProps {
   children: ReactNode;
@@ -20,12 +20,19 @@ export function GlassScene({ children }: GlassSceneProps) {
     if (!context) return;
 
     const image = new Image();
+    let animationFrame: number | null = null;
+    let disposed = false;
+
     const draw = () => {
+      animationFrame = null;
       const pixelRatio = Math.min(window.devicePixelRatio, 1.5);
       const width = Math.round(window.innerWidth * pixelRatio);
       const height = Math.round(window.innerHeight * pixelRatio);
-      background.width = width;
-      background.height = height;
+
+      if (background.width !== width || background.height !== height) {
+        background.width = width;
+        background.height = height;
+      }
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
       const cssWidth = width / pixelRatio;
@@ -108,59 +115,69 @@ export function GlassScene({ children }: GlassSceneProps) {
       context.stroke();
     };
 
-    image.addEventListener("load", draw);
+    const scheduleDraw = () => {
+      if (!disposed && animationFrame === null) {
+        animationFrame = window.requestAnimationFrame(draw);
+      }
+    };
+
+    image.decoding = "async";
+    image.addEventListener("load", scheduleDraw);
     image.src = illustrationUrl;
-    draw();
-    window.addEventListener("resize", draw);
+    void image.decode().then(scheduleDraw, scheduleDraw);
+    scheduleDraw();
+    window.addEventListener("resize", scheduleDraw);
     return () => {
-      image.removeEventListener("load", draw);
-      window.removeEventListener("resize", draw);
+      disposed = true;
+      image.removeEventListener("load", scheduleDraw);
+      window.removeEventListener("resize", scheduleDraw);
+      if (animationFrame !== null) {
+        window.cancelAnimationFrame(animationFrame);
+      }
     };
   }, [background]);
 
   return (
     <>
       <canvas ref={attachBackground} className="background-source" aria-hidden="true" />
-      {background && (
-        <PlasmaProvider
-          background={background}
-          mood="aurora"
-          theme="light"
-          material="plasma"
-          radius={30}
-          blend={34}
-          viscosity={0.34}
-          stretch={1.25}
-          flow={0.28}
-          tint="#fff5ef"
-          opacity={0.08}
-          frost={0.12}
-          elevation={0.21}
-          refraction={1.55}
-          dispersion={1.4}
-          rim={1.3}
-          rimColor="iridescent"
-          rimWidth={1.25}
-          highlight={1.15}
-          edgeLine={1}
-          shimmer={1.1}
-          shimmerSpeed={0.8}
-          glow={0.9}
-          wash={0.24}
-          grain={0.28}
-          pointerDrop
-          pointerPull
-          ambientDrops
-          grid={16}
-          magnet={44}
-          quality={1.25}
-          freezeOnScroll
-          maxSurfaces={12}
-          zIndex={-1}
-        >
-          {children}
-        </PlasmaProvider>
-      )}
+      <PlasmaProvider
+        background={background ?? "#fff0d5"}
+        mood="aurora"
+        theme="light"
+        material="plasma"
+        radius={30}
+        blend={34}
+        viscosity={0.34}
+        stretch={1.25}
+        flow={0.28}
+        tint="#fff5ef"
+        opacity={0.08}
+        frost={0.12}
+        elevation={0.21}
+        refraction={1.55}
+        dispersion={1.4}
+        rim={1.3}
+        rimColor="iridescent"
+        rimWidth={1.25}
+        highlight={1.15}
+        edgeLine={1}
+        shimmer={1.1}
+        shimmerSpeed={0.8}
+        glow={0.9}
+        wash={0.24}
+        grain={0.28}
+        pointerDrop
+        pointerPull
+        ambientDrops
+        grid={16}
+        magnet={44}
+        quality={1.25}
+        freezeOnScroll
+        maxSurfaces={8}
+        zIndex={-1}
+      >
+        {children}
+      </PlasmaProvider>
     </>
   );
 }

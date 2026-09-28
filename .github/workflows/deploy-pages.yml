@@ -3,10 +3,12 @@ name: Deploy portfolio to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
-  group: pages
+  group: pages-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -22,12 +24,24 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: npm run performance:ci
+      - name: Upload performance reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports
+          path: .lighthouseci
+          if-no-files-found: ignore
+          include-hidden-files: true
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

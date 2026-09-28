@@ -15,7 +15,16 @@ export function Resume({ language }: ResumeProps) {
           <div className="education-grid">
             {education.map((item) => (
               <article className="education-item" key={item.school.en}>
-                <img src={item.logo} alt="" loading="lazy" />
+                <img
+                  src={item.logo.src}
+                  srcSet={item.logo.srcSet}
+                  sizes="(max-width: 600px) 44px, 56px"
+                  width="56"
+                  height="56"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div>
                   <div className="item-heading">
                     <h3>{text(item.school, language)}</h3>
